@@ -7,6 +7,10 @@ test("All mixins are properly exported", t => {
 		// Container
 		"centered-container(110rem, 1.1rem)",
 
+		// Fonts,
+		"emoji-fonts(Georgia)",
+		"system-fonts(Georgia)",
+
 		// Media Queries
 		"on-max-height(11rem) { color: red; }",
 		"on-max-width(11rem) { color: red; }",
