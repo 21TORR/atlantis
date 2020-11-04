@@ -11,6 +11,13 @@
 	"scripts": {
 		"test": "ava"
 	},
+	"devDependencies": {
+		"@types/node": "^14.14.6",
+		"@types/sass": "^1.16.0",
+		"ava": "^3.13.0",
+		"esm": "^3.2.25",
+		"sass": "^1.28.0"
+	},
 	"publishConfig": {
 		"access": "public"
 	},
@@ -25,12 +32,5 @@
 	"np": {
 		"branch": "1.x",
 		"contents": "dist"
-	},
-	"devDependencies": {
-		"@types/node": "^14.14.6",
-		"@types/sass": "^1.16.0",
-		"ava": "^3.13.0",
-		"esm": "^3.2.25",
-		"sass": "^1.28.0"
 	}
 }
