@@ -1,0 +1,49 @@
+///
+/// Hides the text in an element, commonly used to show an image. Some elements will need block-level styles applied.
+///
+/// @link http://zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
+///
+/// @example scss - Usage
+///   .element {
+///     @include hide-text;
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     overflow: hidden;
+///     text-indent: 101%;
+///     white-space: nowrap;
+///   }
+///
+/// @example scss - Usage
+///   .element {
+///     @include hide-text(true);
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     overflow: hidden;
+///     text-indent: 101vw;
+///     white-space: nowrap;
+///   }
+///
+@mixin hide-text ($absolute: false) {
+	overflow: hidden;
+	text-indent: if($absolute, 101vw, 101%);
+	white-space: nowrap;
+}
+
+
+///
+/// Prevents wrapping of text by displaying ellipsis instead.
+///
+/// @example scss - Usage
+///   .element {
+///     @include text-overflow-ellipsis;
+///   }
+///
+@mixin text-overflow-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
