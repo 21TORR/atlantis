@@ -1,0 +1,36 @@
+{
+	"name": "@21torr/atlantis",
+	"description": "SCSS library, providing different mixins and helpers.",
+	"license": "MIT",
+	"homepage": "https://github.com/21TORR/atlantis",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/21TORR/atlantis.git"
+	},
+	"version": "0.0.1",
+	"scripts": {
+		"test": "ava"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"ava": {
+		"files": [
+			"tests/**/*.test.js"
+		],
+		"require": [
+			"esm"
+		]
+	},
+	"np": {
+		"branch": "1.x",
+		"contents": "dist"
+	},
+	"devDependencies": {
+		"@types/node": "^14.14.6",
+		"@types/sass": "^1.16.0",
+		"ava": "^3.13.0",
+		"esm": "^3.2.25",
+		"sass": "^1.28.0"
+	}
+}

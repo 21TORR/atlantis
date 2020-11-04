@@ -1,0 +1,58 @@
+@use "sass:math";
+
+///
+/// Normalizes the given value to px
+///
+@function normalize-to-px($value) {
+	$unit: math.unit($value);
+
+	@if ("px" == $unit) {
+		@return $value;
+	}
+	@else if ("rem" == $unit) {
+		@return ($value / 1rem) * 10px;
+	}
+	@else {
+		@error "Can't automatically convert value with unit '#{$unit}'";
+	}
+}
+
+
+///
+/// Mixin to include a media query for max-width
+///
+@mixin on-max-width ($max-width) {
+	@media screen and (max-width: #{normalize-to-px($max-width)}) {
+		@content;
+	}
+}
+
+
+///
+/// Mixin to include a media query for max-width
+///
+@mixin on-min-width ($min-width) {
+	@media screen and (min-width: #{normalize-to-px($min-width)}) {
+		@content;
+	}
+}
+
+
+///
+/// Mixin to include a media query for max-height
+///
+@mixin on-max-height ($max-height) {
+	@media screen and (max-height: #{normalize-to-px($max-height)}) {
+		@content;
+	}
+}
+
+
+///
+/// Mixin to include a media query for min-height
+///
+@mixin on-min-height ($min-height) {
+	@media screen and (min-height: #{normalize-to-px($min-height)}) {
+		@content;
+	}
+}
