@@ -35,7 +35,11 @@ test("All mixins are properly exported", t => {
 
 		// Size
 		"aspect-ratio (1.1rem, 1.1rem)",
-		"square (1.1rem)"
+		"square (1.1rem)",
+
+		// SVG
+		"color-svg (red)",
+		"svg-child",
 	];
 
 	expectedMixins.forEach(mixin => {

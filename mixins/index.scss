@@ -5,3 +5,4 @@
 @forward "mixins/position";
 @forward "mixins/scroll";
 @forward "mixins/size";
+@forward "mixins/svg" hide str-replace, url-encode;
