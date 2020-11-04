@@ -1,0 +1,22 @@
+@use "sass:list";
+
+///
+/// Compiles to a transition declaration and will automatically generate the `will-change` property as well.
+///
+/// For multiple properties, just pass in a space separated list as the first parameter, like this:
+///
+///    @include transition(height width top, .5s);
+///
+@mixin transition ($properties, $duration: .15s, $easing: ease-in-out, $will-change: true) {
+	@if $will-change {
+		will-change: list.join($properties, (), 'comma');
+	}
+
+	@if (1 == list.length($properties)) {
+		transition: #{$duration} #{$easing} #{$properties};
+	}
+	@else {
+		transition: #{$duration} #{$easing};
+		transition-property: list.join($properties, (), 'comma');
+	}
+}
