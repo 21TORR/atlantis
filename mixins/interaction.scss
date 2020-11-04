@@ -1,0 +1,20 @@
+///
+/// Generic styling for all interactive states
+///
+@mixin on-interaction ($active-class: null) {
+	@if (null != $active-class) {
+		&:active,
+		&:focus,
+		&:hover,
+		&.#{$active-class} {
+			@content;
+		}
+	}
+	@else {
+		&:active,
+		&:focus,
+		&:hover{
+			@content;
+		}
+	}
+}
