@@ -1,0 +1,73 @@
+///
+/// Generic str-replace implementation
+///
+@function str-replace ($string, $search, $replace) {
+	$index: str-index($string, $search);
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+
+///
+/// URL-encodes the given string
+///
+@function url-encode ($string) {
+	$replacements: (
+			'<':'%3C',
+			'>': '%3E',
+			'"': '%22',
+			'#': '%23',
+			'&': '%26'
+	);
+
+	@each $search, $replace in $replacements {
+		$string: str-replace($string, $search, $replace);
+	}
+
+	@return $string;
+}
+
+
+///
+/// Colors all elements inside the SVG according to the default classes.
+///
+/// You should only use this mixin to style generic SVGs. Only add the classes you actually need in case of a specific
+/// (and known) SVG.
+///
+@mixin color-svg ($color) {
+	._f {
+		fill: $color;
+	}
+
+	._s {
+		stroke: $color;
+	}
+}
+
+
+///
+/// Mixin for styling an SVG child
+///
+@mixin svg-child {
+	svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+///
+/// Takes the given SVG string and puts it URL-encoded in an `url()`.
+///
+/// @example scss - Usage
+///   .element {
+///     background: inline-svg("<svg ...>...</svg>") center / 100% 100% no-repeat;
+///   }
+///
+@function inline-svg ($svg) {
+	@return url("data:image/svg+xml,#{url-encode($svg)}");
+}
