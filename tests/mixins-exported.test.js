@@ -43,6 +43,10 @@ test("All mixins are properly exported", t => {
 
 		// Transition
 		"transition(width)",
+
+		// Visibility
+		"hide-text",
+		"text-overflow-ellipsis",
 	];
 
 	expectedMixins.forEach(mixin => {
