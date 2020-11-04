@@ -1,0 +1,17 @@
+///
+/// Sets the aspect ratio for this element
+///
+@mixin aspect-ratio ($width, $height) {
+	width: 100%;
+	height: 0;
+	padding-bottom: percentage($height / $width);
+}
+
+
+///
+/// Sets width + height to the same value
+///
+@mixin square ($size) {
+	width: $size;
+	height: $size;
+}
