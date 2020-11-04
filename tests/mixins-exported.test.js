@@ -32,6 +32,10 @@ test("All mixins are properly exported", t => {
 
 		// Scroll
 		"smooth-scroll",
+
+		// Size
+		"aspect-ratio (1.1rem, 1.1rem)",
+		"square (1.1rem)"
 	];
 
 	expectedMixins.forEach(mixin => {
