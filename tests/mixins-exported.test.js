@@ -29,6 +29,9 @@ test("All mixins are properly exported", t => {
 		"flex-fill-width",
 		"flex-fixed-height",
 		"flex-fixed-width",
+
+		// Scroll
+		"smooth-scroll",
 	];
 
 	expectedMixins.forEach(mixin => {

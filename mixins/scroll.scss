@@ -1,0 +1,7 @@
+///
+/// Enables smooth scrolling
+///
+@mixin smooth-scroll {
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
