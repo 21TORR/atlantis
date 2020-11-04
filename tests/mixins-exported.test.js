@@ -4,6 +4,9 @@ import {compileScss} from "./helpers/scss";
 
 test("All mixins are properly exported", t => {
 	const expectedMixins = [
+		// Container
+		"centered-container(110rem, 1.1rem)",
+
 		// Media Queries
 		"on-max-height(11rem) { color: red; }",
 		"on-max-width(11rem) { color: red; }",

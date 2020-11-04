@@ -1,0 +1,17 @@
+@use "media-queries";
+
+///
+/// Generates a centered Container
+///
+/// Centers the element on larger screens than `$max-width`, but always keeps at least the `$min-margin`
+///
+@mixin centered-container ($max-width, $min-margin) {
+	max-width: $max-width;
+	margin-left: $min-margin;
+	margin-right: $min-margin;
+
+	@include media-queries.on-min-width(2 * $min-margin + $max-width) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
