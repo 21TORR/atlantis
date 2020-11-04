@@ -11,6 +11,9 @@ test("All mixins are properly exported", t => {
 		"emoji-fonts(Georgia)",
 		"system-fonts(Georgia)",
 
+		// Interaction
+		"on-interaction { color: red; }",
+
 		// Media Queries
 		"on-max-height(11rem) { color: red; }",
 		"on-max-width(11rem) { color: red; }",
@@ -28,6 +31,6 @@ test("All mixins are properly exported", t => {
 		`);
 
 		t.is(css.length > 0, true, "should have output");
-		t.regex(css, /(^|\b|\{)\.my-selector\{/, "should contain the selector");
+		t.regex(css, /(^|\b|\{)\.my-selector.*?\{/, "should contain the selector");
 	});
 });
