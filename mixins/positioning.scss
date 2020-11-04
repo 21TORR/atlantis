@@ -1,0 +1,88 @@
+///
+/// Centers the children
+///
+@mixin center-children {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+///
+/// Centers the element in a positioned parent
+///
+@mixin center-element {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+///
+/// Fills a relative positioned parent
+///
+@mixin fill-parent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+
+///
+/// Creates equal width columns
+///
+@mixin flex-equal-columns {
+	@include flex-fill-width;
+	flex-basis: 0;
+}
+
+
+///
+/// Fills the flex item
+///
+@mixin flex-fill-height {
+	flex-grow: 1;
+	flex-shrink: 1;
+	min-height: 0;
+}
+
+
+///
+/// Fills the flex item
+///
+@mixin flex-fill-width {
+	flex-grow: 1;
+	flex-shrink: 1;
+	min-width: 0;
+}
+
+
+///
+/// A flex item with a fixed (optionally specified) height
+///
+@mixin flex-fixed-height ($height: null) {
+	flex-grow: 0;
+	flex-shrink: 0;
+	min-height: 0;
+
+	@if $height != null {
+		height: $height;
+	}
+}
+
+
+///
+/// A flex item with a fixed (optionally specified) width
+///
+@mixin flex-fixed-width ($width: null) {
+	flex-grow: 0;
+	flex-shrink: 0;
+	min-width: 0;
+
+	@if $width != null {
+		width: $width;
+	}
+}
