@@ -1,0 +1,37 @@
+///
+/// Fonts to include the system emoji fonts
+///
+/// @param {string...} $custom-fonts the custom fonts to include (variadic argument)
+/// @output the `font-family` including emoji fonts
+///
+@mixin emoji-fonts ($custom-fonts...) {
+	font-family:
+		#{$custom-fonts},
+		// Emoji fonts
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+///
+/// Complete stack of system fonts
+///
+/// @param {string...} $custom-fonts the custom fonts to include (variadic argument)
+/// @output the `font-family` with all fonts, including emoji fonts
+///
+@mixin system-fonts ($custom-fonts...) {
+	@include emoji-fonts (
+		#{$custom-fonts},
+		// Safari for macOS and iOS (San Francisco)
+		-apple-system,
+		// Chrome >= 56 for macOS (San Francisco), Windows, Linux and Android
+		system-ui,
+		// Chrome < 56 for macOS (San Francisco)
+		BlinkMacSystemFont,
+		// Windows
+		"Segoe UI",
+		// Android
+		"Roboto",
+		// Basic web fallback
+		"Helvetica Neue", Arial, sans-serif
+	);
+}
