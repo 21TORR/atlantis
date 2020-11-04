@@ -1,10 +1,12 @@
+@use "sass:math";
+
 ///
 /// Sets the aspect ratio for this element
 ///
 @mixin aspect-ratio ($width, $height) {
 	width: 100%;
 	height: 0;
-	padding-bottom: percentage($height / $width);
+	padding-bottom: math.percentage($height / $width);
 }
 
 
