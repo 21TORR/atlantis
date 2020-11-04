@@ -19,6 +19,16 @@ test("All mixins are properly exported", t => {
 		"on-max-width(11rem) { color: red; }",
 		"on-min-height(11rem) { color: red; }",
 		"on-min-width(11rem) { color: red; }",
+
+		// Positioning
+		"center-children",
+		"center-element",
+		"fill-parent",
+		"flex-equal-columns",
+		"flex-fill-height",
+		"flex-fill-width",
+		"flex-fixed-height",
+		"flex-fixed-width",
 	];
 
 	expectedMixins.forEach(mixin => {
