@@ -40,6 +40,9 @@ test("All mixins are properly exported", t => {
 		// SVG
 		"color-svg (red)",
 		"svg-child",
+
+		// Transition
+		"transition(width)",
 	];
 
 	expectedMixins.forEach(mixin => {
