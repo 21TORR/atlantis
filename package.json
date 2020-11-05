@@ -19,7 +19,8 @@
 		"sass": "^1.28.0"
 	},
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"publish-branch": "1.x"
 	},
 	"ava": {
 		"files": [
