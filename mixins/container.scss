@@ -1,4 +1,4 @@
-@use "./media-queries";
+@use "./media-query";
 
 ///
 /// Generates a centered Container
@@ -10,7 +10,7 @@
 	margin-left: $min-margin;
 	margin-right: $min-margin;
 
-	@include media-queries.on-min-width(2 * $min-margin + $max-width) {
+	@include media-query.on-min-width(2 * $min-margin + $max-width) {
 		margin-left: auto;
 		margin-right: auto;
 	}

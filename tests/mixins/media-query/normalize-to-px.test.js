@@ -8,10 +8,10 @@ test("normalize-to-px: Normalize to px variations", t => {
 		["11px", "11px"],
 	].forEach(([input, expected]) => {
 		const css = compileScss(`
-			@use "mixins/media-queries";
+			@use "mixins/media-query";
 			
 			a {
-				content: media-queries.normalize-to-px(${input});
+				content: media-query.normalize-to-px(${input});
 			}
 		`);
 
@@ -31,10 +31,10 @@ test("normalize-to-px: Invalid units", t => {
 	].forEach(unit => {
 		const error = t.throws(
 			() => compileScss(`
-				@use "mixins/media-queries";
+				@use "mixins/media-query";
 				
 				a {
-					content: media-queries.normalize-to-px(11${unit});
+					content: media-query.normalize-to-px(11${unit});
 				}
 			`),
 		);
