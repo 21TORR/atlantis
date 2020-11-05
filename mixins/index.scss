@@ -1,7 +1,7 @@
 @forward "./container";
-@forward "./fonts";
+@forward "./font";
 @forward "./interaction";
-@forward "./media-queries" hide normalize-to-px;
+@forward "./media-query" hide normalize-to-px;
 @forward "./position";
 @forward "./scroll";
 @forward "./size";
