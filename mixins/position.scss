@@ -11,11 +11,20 @@
 ///
 /// Centers the element in a positioned parent
 ///
-@mixin center-element {
+@mixin center-absolute {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+
+///
+/// Centers the element horizontally
+///
+@mixin center-horizontal {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
