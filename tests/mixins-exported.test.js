@@ -21,8 +21,9 @@ test("All mixins are properly exported", t => {
 		"on-min-width(11rem) { color: red; }",
 
 		// Positioning
+		"center-absolute",
 		"center-children",
-		"center-element",
+		"center-horizontal",
 		"fill-parent",
 		"flex-equal-columns",
 		"flex-fill-height",
