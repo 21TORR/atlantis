@@ -1,3 +1,9 @@
+0.3.0
+=====
+
+*   (feature) Add `declare-font` mixin.
+
+
 0.2.0
 =====
 
