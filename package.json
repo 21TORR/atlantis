@@ -7,7 +7,7 @@
 		"type": "git",
 		"url": "https://github.com/21TORR/atlantis.git"
 	},
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"scripts": {
 		"test": "ava -v"
 	},
