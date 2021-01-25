@@ -35,3 +35,68 @@
 		"Helvetica Neue", Arial, sans-serif
 	);
 }
+
+
+///
+/// Declares a font in all given variants.
+///
+/// You should use the "correct" font name as `$font-family` and it will automatically set up `font-weight`
+/// and `font-style` for you.
+///
+/// This method will auto-generate the file names for you, so you need to name your files accordingly.
+/// It will just concat the `$relative-path` with the font weight, style and the format as extension.
+///
+/// Examples of generated file names:
+///
+///		• Arial-300-italic.woff2
+///		• Arial-700-normal.woff
+///
+/// @example
+///
+///		@include declare-font(
+///			"../font/arial",
+///			"Arial",
+///			(regular: 400, bold: 700)
+///		)
+///
+///		// will generate:
+///
+///		@font-face {
+///			font-family: "Arial";
+///			font-weight: 400;
+///			src: url("../font/arial-400-normal.woff2") format("woff2"), ...;
+///		}
+///		// ...
+///
+/// @param {string} 				$relative-path 	The path to the font file, relative to the CSS file.
+/// @param {string} 				$font-family 	The name of the font family
+/// @param {Map<String, Number>}	$font-weights	The supported font weights as numerical list
+/// @param {String[]}				$font-styles	The supported font styles
+/// @param {String[]}				$types			The supported file types
+///
+@mixin declare-font (
+	$relative-path,
+	$font-family,
+	$font-weights,
+	$font-styles: (normal italic),
+	$types: (woff2 woff),
+	$font-display: fallback
+) {
+	@each $font-weight-label, $font-weight in $font-weights {
+		@each $font-style in $font-styles {
+			@font-face {
+				$src : ();
+
+				@each $type in $types {
+					$src: append($src, url("#{$relative-path}-#{$font-weight}-#{$font-style}.#{$type}") format("#{$type}"), comma);
+				}
+
+				font-family: $font-family;
+				font-weight: $font-weight;
+				font-style: $font-style;
+				font-display: $font-display;
+				src: $src;
+			}
+		}
+	}
+}
