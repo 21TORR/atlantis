@@ -1,3 +1,9 @@
+0.4.0 (unreleased)
+=====
+
+*   (feature) Add `fetch-font-weight` helper mixin.
+
+
 0.3.0
 =====
 

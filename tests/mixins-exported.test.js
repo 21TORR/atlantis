@@ -11,6 +11,7 @@ test("All mixins are properly exported", t => {
 		"emoji-fonts(Georgia)",
 		"system-fonts(Georgia)",
 		"declare-font('.../test', 'Test', (300 400))",
+		"fetch-font-weight(light, (light: 300))",
 
 		// Interaction
 		"on-interaction { color: red; }",

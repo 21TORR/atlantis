@@ -1,3 +1,7 @@
+@use "sass:list";
+@use "sass:map";
+
+
 ///
 /// Fonts to include the system emoji fonts
 ///
@@ -88,7 +92,7 @@
 				$src : ();
 
 				@each $type in $types {
-					$src: append($src, url("#{$relative-path}-#{$font-weight}-#{$font-style}.#{$type}") format("#{$type}"), comma);
+					$src: list.append($src, url("#{$relative-path}-#{$font-weight}-#{$font-style}.#{$type}") format("#{$type}"), comma);
 				}
 
 				font-family: $font-family;
@@ -98,5 +102,30 @@
 				src: $src;
 			}
 		}
+	}
+}
+
+
+///
+/// Fetches the font weight from the map of available font weights.
+///
+/// You should wrap this helper mixin in your project to have a project-specific mixin
+///
+/// @example
+/// 	@mixin font-weight ($font-weight) {
+/// 		@include atlantis.fetch-font-weight($font-weight, variables.$font-weights);
+/// 	}
+///
+/// 	@mixin headline-font-weight ($font-weight) {
+/// 		@include atlantis.fetch-font-weight($font-weight, variables.$headline-font-weights);
+/// 	}
+///
+@mixin fetch-font-weight ($font-weight, $available-font-weights) {
+	@if ($font-weight != null) {
+		@if (not map.has-key($available-font-weights, $font-weight)) {
+			@error "Unknown font weight: #{$font-weight}";
+		}
+
+		font-weight: map.get($available-font-weights, $font-weight);
 	}
 }
