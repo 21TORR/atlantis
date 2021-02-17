@@ -2,6 +2,8 @@
 =====
 
 *   (feature) Add `fetch-font-weight` helper mixin.
+*   (improvement) Hide `iframe` borders in reset.
+*   (improvement) Use responsive base font size in reset.
 
 
 0.3.0
