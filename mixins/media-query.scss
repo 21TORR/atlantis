@@ -1,4 +1,6 @@
+@use "sass:list";
 @use "sass:math";
+@use "sass:string";
 
 ///
 /// Normalizes the given value to px
@@ -22,7 +24,7 @@
 /// Mixin to include a media query for max-width
 ///
 @mixin on-max-width ($max-width) {
-	@media screen and (max-width: #{normalize-to-px($max-width)}) {
+	@include on-media($max-width: $max-width) {
 		@content;
 	}
 }
@@ -32,7 +34,7 @@
 /// Mixin to include a media query for max-width
 ///
 @mixin on-min-width ($min-width) {
-	@media screen and (min-width: #{normalize-to-px($min-width)}) {
+	@include on-media($min-width: $min-width) {
 		@content;
 	}
 }
@@ -42,7 +44,7 @@
 /// Mixin to include a media query for max-height
 ///
 @mixin on-max-height ($max-height) {
-	@media screen and (max-height: #{normalize-to-px($max-height)}) {
+	@include on-media($max-height: $max-height) {
 		@content;
 	}
 }
@@ -52,7 +54,58 @@
 /// Mixin to include a media query for min-height
 ///
 @mixin on-min-height ($min-height) {
-	@media screen and (min-height: #{normalize-to-px($min-height)}) {
+	@include on-media($min-height: $min-height) {
+		@content;
+	}
+}
+
+@mixin on-media (
+	$min-width: null,
+	$min-height: null,
+	$max-width: null,
+	$max-height: null
+) {
+	$list: ();
+
+	@if ($min-width != null) {
+		$list: list.append(
+			$list,
+			string.unquote("(min-width: #{normalize-to-px($min-width)})")
+		);
+	}
+
+	@if ($min-height != null) {
+		$list: list.append(
+			$list,
+			string.unquote("(min-height: #{normalize-to-px($min-height)})")
+		);
+	}
+
+	@if ($max-width != null) {
+		$list: list.append(
+			$list,
+			string.unquote("(max-width: #{normalize-to-px($max-width)})")
+		);
+	}
+
+	@if ($max-height != null) {
+		$list: list.append(
+			$list,
+			string.unquote("(max-height: #{normalize-to-px($max-height)})")
+		);
+	}
+
+	@if (list.length($list) == 0) {
+		@error "Can't create empty media query list";
+	}
+
+	$query: "screen";
+
+	@each $entry in $list {
+		$query: string.unquote("#{$query} and #{$entry}");
+	}
+
+	@media #{$query} {
 		@content;
 	}
 }

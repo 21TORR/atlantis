@@ -1,3 +1,9 @@
+0.5.0
+=====
+
+*   (feature) Add `media-query.on-media()` mixin.
+
+
 0.4.0
 =====
 

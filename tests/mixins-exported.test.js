@@ -21,6 +21,7 @@ test("All mixins are properly exported", t => {
 		"on-max-width(11rem) { color: red; }",
 		"on-min-height(11rem) { color: red; }",
 		"on-min-width(11rem) { color: red; }",
+		"on-media($min-width: 11rem) { color: red; }",
 
 		// Positioning
 		"center-absolute",
