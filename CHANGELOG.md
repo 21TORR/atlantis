@@ -1,3 +1,9 @@
+0.5.1
+=====
+
+*   (improvement) Allow nullable media query (which will just compile away).
+
+
 0.5.0
 =====
 
