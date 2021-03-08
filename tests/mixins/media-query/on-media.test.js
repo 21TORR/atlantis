@@ -27,19 +27,17 @@ test("on-media: Different parameter variations", t => {
 
 
 test("on-media: empty", t => {
-	const error = t.throws(
-		() => compileScss(`
-			@use "mixins/media-query";
-			
-			@include media-query.on-media() {
-				a {
-					color: red;
-				}
+	const css = compileScss(`
+		@use "mixins/media-query";
+		
+		@include media-query.on-media() {
+			a {
+				color: red;
 			}
-		`)
-	);
+		}
+	`);
 
-	t.regex(error.message, new RegExp(`Can't create empty media query list`));
+	t.is(css, `a{color:red}`);
 });
 
 

@@ -96,16 +96,18 @@
 	}
 
 	@if (list.length($list) == 0) {
-		@error "Can't create empty media query list";
-	}
-
-	$query: "screen";
-
-	@each $entry in $list {
-		$query: string.unquote("#{$query} and #{$entry}");
-	}
-
-	@media #{$query} {
 		@content;
 	}
+	@else {
+		$query: "screen";
+
+		@each $entry in $list {
+			$query: string.unquote("#{$query} and #{$entry}");
+		}
+
+		@media #{$query} {
+			@content;
+		}
+	}
+
 }
