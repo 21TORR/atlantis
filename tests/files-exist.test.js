@@ -4,6 +4,7 @@ import {compileScss} from "./helpers/scss";
 
 test("All files do exist at the given paths", t => {
 	const expectedFiles = [
+		"base",
 		"mixins",
 		"reset",
 	];
