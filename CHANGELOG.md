@@ -1,3 +1,9 @@
+0.6.0
+=====
+
+*   (feature) Add `base` styles.
+
+
 0.5.1
 =====
 
