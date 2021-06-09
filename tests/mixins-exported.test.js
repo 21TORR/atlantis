@@ -4,6 +4,9 @@ import {compileScss} from "./helpers/scss";
 
 test("All mixins are properly exported", t => {
 	const expectedMixins = [
+		// Children
+		"on-n-siblings(3) { color: red; }",
+
 		// Container
 		"centered-container(110rem, 1.1rem)",
 

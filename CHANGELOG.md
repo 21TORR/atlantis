@@ -1,3 +1,10 @@
+0.7.0
+=====
+
+*   (feature) Add `on-n-siblings()` mixin.
+*   (feature) Add `is-number()` and `is-integer()` function.
+
+
 0.6.0
 =====
 

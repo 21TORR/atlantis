@@ -1,3 +1,4 @@
+@forward "./children";
 @forward "./container";
 @forward "./font";
 @forward "./interaction";
@@ -7,4 +8,5 @@
 @forward "./size";
 @forward "./svg" hide str-replace, url-encode;
 @forward "./transition";
+@forward "./types";
 @forward "./visibility";
