@@ -10,16 +10,16 @@ jobs:
             -   name: Checkout Code
                 uses: actions/checkout@v2
 
-            -   uses: actions/setup-node@v2-beta
+            -   uses: actions/setup-node@v2
                 with:
                     node-version: '14'
 
-            -   uses: pnpm/action-setup@v1.2.1
+            -   uses: pnpm/action-setup@v2
                 with:
-                    version: '^5.8.0'
+                    version: '^6.7'
                     run_install: true
 
             -   run: pnpm test
 
             -   name: Prettify package.json
-                run: pnpx prettier-package-json --use-tabs --list-different
+                run: ./node_modules/.bin/prettier-package-json --use-tabs --list-different

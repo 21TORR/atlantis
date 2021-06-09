@@ -1,0 +1,22 @@
+@use "types";
+
+///
+/// Applies the rule if the element is one of exact
+///
+@mixin on-n-siblings ($number-of-siblings) {
+	@if (not types.is-integer($number-of-siblings) or $number-of-siblings <= 0) {
+		@error "Number of siblings must be an integer >= 1, but #{$number-of-siblings} given.";
+	}
+
+	@if (1 == $number-of-siblings) {
+		&:first-child:last-child {
+			@content;
+		}
+	}
+	@else {
+		&:first-child:nth-last-child(#{$number-of-siblings}),
+		&:first-child:nth-last-child(#{$number-of-siblings}) ~ * {
+			@content;
+		}
+	}
+}

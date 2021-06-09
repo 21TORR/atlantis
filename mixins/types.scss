@@ -1,0 +1,13 @@
+///
+/// Returns whether the given value is a number (int or float)
+///
+@function is-number($value) {
+	@return type-of($value) == 'number';
+}
+
+///
+/// Returns whether the given value is an integer
+///
+@function is-integer($value) {
+	@return is-number($value) and round($value) == $value;
+}
