@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // This is adapted from normalize.css but specialized in some points
 // http://necolas.github.io/normalize.css/
 
@@ -11,7 +13,8 @@ html {
 	-webkit-text-size-adjust: 100%;
 	box-sizing: border-box;
 	// normalize 1rem = 16px to 1rem = 10px
-	font-size: percentage(10/16);
+	// so use
+	font-size: math.percentage(math.div(10, 16));
 }
 
 * {

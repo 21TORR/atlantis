@@ -12,7 +12,7 @@
 		@return $value;
 	}
 	@else if ("rem" == $unit) {
-		@return ($value / 1rem) * 10px;
+		@return math.div($value, 1rem) * 10px;
 	}
 	@else {
 		@error "Can't automatically convert value with unit '#{$unit}'";

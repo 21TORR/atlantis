@@ -1,3 +1,9 @@
+0.7.1
+=====
+
+*   (improvement) Remove usage of deprecated `/` operator.
+
+
 0.7.0
 =====
 
