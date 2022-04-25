@@ -1,3 +1,9 @@
+0.7.2
+=====
+
+* (improvement) Add proper support for `opentype` (`.otf`) fonts in `declare-font`.
+
+
 0.7.1
 =====
 

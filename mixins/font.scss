@@ -78,6 +78,10 @@
 /// @param {String[]}				$font-styles	The supported font styles
 /// @param {String[]}				$types			The supported file types
 ///
+$font-type-file-extension-map: (
+	opentype: "otf",
+);
+
 @mixin declare-font (
 	$relative-path,
 	$font-family,
@@ -92,7 +96,12 @@
 				$src : ();
 
 				@each $type in $types {
-					$src: list.append($src, url("#{$relative-path}-#{$font-weight}-#{$font-style}.#{$type}") format("#{$type}"), comma);
+					$file-extension: $type;
+
+					@if (map.has-key($font-type-file-extension-map, $type)) {
+						$file-extension: map.get($font-type-file-extension-map, $type);
+					}
+					$src: list.append($src, url("#{$relative-path}-#{$font-weight}-#{$font-style}.#{$file-extension}") format("#{$type}"), comma);
 				}
 
 				font-family: $font-family;
