@@ -15,6 +15,7 @@ test("All mixins are properly exported", t => {
 		"system-fonts(Georgia)",
 		"declare-font('.../test', 'Test', (300 400))",
 		"fetch-font-weight(light, (light: 300))",
+		"font-face('Test', url('test-300-normal.woff2'))",
 
 		// Interaction
 		"on-interaction { color: red; }",
