@@ -1,3 +1,9 @@
+1.0.1
+=====
+
+* (improvement) Fix default rendering of images that are too wide.
+
+
 1.0.0
 =====
 
