@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "sass:map";
+@use "sass:string";
 
 
 ///
@@ -137,4 +138,82 @@ $font-type-file-extension-map: (
 
 		font-weight: map.get($available-font-weights, $font-weight);
 	}
+}
+
+
+///
+/// Defines a @font-face and auto-detect all possible settings.
+/// Uses an explicit url() to fix support for webpack compilation.
+///
+/// Pass the font family name and the full url to the file.
+///
+/// @example
+///
+/// 	@include font-face("Arial", url("../font/Arial-100-normal.woff2"));
+///
+@mixin font-face (
+	$font-family,
+	$path,
+	$font-display: fallback,
+	$font-weight: null,
+	$font-style: null,
+	$format: null,
+) {
+	@font-face {
+		font-family: $font-family;
+		font-weight: if($font-weight, $font-weight, extract-font-weight($path));
+		font-style: if($font-style, $font-style, extract-font-style($path));
+		font-display: $font-display;
+		src: $path format(string.quote(if($format, $format, extract-font-format($path))));
+	}
+}
+
+
+///
+/// Extracts the font weight from the given path
+///
+@function extract-font-weight ($path) {
+	@for $i from 1 through 9 {
+		$font-weight-to-test: $i * 100;
+
+		@if string.index($path, "-#{$font-weight-to-test}") {
+			@return $font-weight-to-test;
+		}
+	}
+
+	@error "Could not automatically extract font-weight from path #{$path}";
+}
+
+
+///
+/// Extracts the font weight from the given path
+///
+@function extract-font-style ($path) {
+	@each $font-style in (normal italic) {
+		@if string.index($path, "-#{$font-style}.") {
+			@return $font-style;
+		}
+	}
+
+	@error "Could not automatically extract font-style from path #{$path}";
+}
+
+
+///
+/// Extracts the font format from the given path
+///
+@function extract-font-format ($path) {
+	$possible-formats: (
+		woff2: "woff2",
+		woff: "woff",
+		otf: "opentype",
+	);
+
+	@each $extension, $type in $possible-formats {
+		@if string.index($path, ".#{$extension}") {
+			@return $type;
+		}
+	}
+
+	@error "Could not automatically detect font format from path #{$path}";
 }

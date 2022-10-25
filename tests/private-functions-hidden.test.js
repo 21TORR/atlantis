@@ -7,6 +7,9 @@ test("All private functions are not visible", t => {
 		"normalize-to-px(10rem)",
 		"str-replace('ohai', 'o', 'hai')",
 		"url-encode('ohai')",
+		"extract-font-weight('a')",
+		"extract-font-style('a')",
+		"extract-font-format('a')",
 	];
 
 	privateFunctions.forEach(functionCall => {

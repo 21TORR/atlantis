@@ -1,6 +1,6 @@
 @forward "./children";
 @forward "./container";
-@forward "./font";
+@forward "./font" hide extract-font-weight, extract-font-style, extract-font-format;
 @forward "./interaction";
 @forward "./media-query" hide normalize-to-px;
 @forward "./position";

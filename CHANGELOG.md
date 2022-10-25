@@ -1,3 +1,10 @@
+1.0.0
+=====
+
+* (improvement) Finally release 1.0
+* (feature) Add mixin `font-face()`.
+
+
 0.7.2
 =====
 
