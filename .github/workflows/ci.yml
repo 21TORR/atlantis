@@ -8,15 +8,15 @@ jobs:
 
         steps:
             -   name: Checkout Code
-                uses: actions/checkout@v2
+                uses: actions/checkout@v4
 
-            -   uses: actions/setup-node@v2
+            -   uses: actions/setup-node@v4
                 with:
-                    node-version: '14'
+                    node-version: '18'
 
             -   uses: pnpm/action-setup@v2
                 with:
-                    version: '^6.7'
+                    version: 'latest'
                     run_install: true
 
             -   run: pnpm test

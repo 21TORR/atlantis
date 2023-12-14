@@ -1,5 +1,5 @@
 import test from "ava";
-import {compileScss} from "./helpers/scss";
+import {compileScss} from "./helpers/scss.mjs";
 
 
 test("All mixins are properly exported", t => {
@@ -57,16 +57,19 @@ test("All mixins are properly exported", t => {
 		"text-overflow-ellipsis",
 	];
 
+	// we need to add another declaration here, as sass might otherwise automatically remove
+	// the empty selector
 	expectedMixins.forEach(mixin => {
 		const css = compileScss(`
 			@use "mixins";
 			
 			.my-selector {
+				color: red;
 				@include mixins.${mixin}; 
 			}
 		`);
 
-		t.is(css.length > 0, true, "should have output");
-		t.regex(css, /(^|\b|\{)\.my-selector.*?\{/, "should contain the selector");
+		t.is(css.length > 0, true, `${mixin}: should have output`);
+		t.regex(css, /(^|\b|\{)\.my-selector.*?\{/, `${mixin}: should contain the selector`);
 	});
 });

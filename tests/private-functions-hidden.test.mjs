@@ -1,5 +1,5 @@
 import test from "ava";
-import {compileScss} from "./helpers/scss";
+import {compileScss} from "./helpers/scss.mjs";
 
 
 test("All private functions are not visible", t => {
