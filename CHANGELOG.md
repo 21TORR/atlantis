@@ -1,3 +1,9 @@
+2.0.0
+=====
+
+* (bc) Changed reset to only use `:where()`.
+
+
 1.0.1
 =====
 

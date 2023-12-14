@@ -8,7 +8,7 @@
 // Document
 // ---------------------------------------------------------------------------------------------------------
 
-html {
+:where(html) {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	box-sizing: border-box;
@@ -17,19 +17,17 @@ html {
 	font-size: math.percentage(math.div(10, 16));
 }
 
-* {
+:where(*) {
 	padding: 0;
 	margin: 0;
 }
 
-*,
-::before,
-::after {
+:where(*, ::before, ::after) {
 	box-sizing: inherit;
 }
 
 
-body {
+:where(body) {
 	font: 1.6rem / 1.2 sans-serif;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -42,16 +40,11 @@ body {
 // Grouping content
 // ---------------------------------------------------------------------------------------------------------
 
-main {
+:where(main) {
 	display: block;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:where(h1, h2, h3, h4, h5, h6) {
 	font-size: inherit;
 	font-weight: inherit;
 	font-style: inherit;
@@ -63,40 +56,37 @@ h6 {
 // Text level semantics
 // ---------------------------------------------------------------------------------------------------------
 
-b,
-strong {
+:where(b, strong) {
 	font-weight: 700;
 }
 
-a {
+:where(a) {
 	color: inherit;
 	text-decoration: none;
 	background-color: transparent;
 }
 
-code,
-kbd {
+:where(code, kbd) {
 	font-family: monospace, monospace;
 	font-size: 1em;
 }
 
-small {
+:where(small) {
 	font-size: 80%;
 }
 
-sub,
-sup {
+:where(sub, sup) {
 	font-size: 75%;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
 }
 
-sub {
+:where(sub) {
 	bottom: -0.25em;
 }
 
-sup {
+:where(sup) {
 	top: -0.5em;
 }
 
@@ -106,23 +96,22 @@ sup {
 // Embedded content
 // ---------------------------------------------------------------------------------------------------------
 
-audio,
-video {
+:where(audio, video) {
 	display: block;
 }
 
-audio:not([controls]) {
+:where(audio:not([controls])) {
 	display: none;
 	height: 0;
 }
 
-img {
+:where(img) {
 	border-style: none;
 	max-width: 100%;
 	height: auto;
 }
 
-iframe {
+:where(iframe) {
 	border: 0;
 }
 
@@ -132,7 +121,7 @@ iframe {
 // ---------------------------------------------------------------------------------------------------------
 
 // Don't forget to style the focus state as well!
-button {
+:where(button) {
 	color: inherit;
 	border: 0;
 	border-radius: 0;
@@ -144,62 +133,55 @@ button {
 	outline: 0;
 }
 
-button,
-input {
+:where(button, input) {
 	overflow: visible;
 }
 
-button,
-input,
-textarea {
+:where(button, input, textarea) {
 	font: inherit;
 	text-align: inherit;
 }
 
-input:disabled,
-textarea:disabled {
+:where(input:disabled, textarea:disabled) {
 	color: inherit;
 }
 
-button,
-select {
+:where(button, select) {
 	text-transform: none;
 }
 
-progress {
+:where(progress) {
 	vertical-align: baseline;
 }
 
-textarea {
+:where(textarea) {
 	overflow: auto;
 }
 
-[type="checkbox"],
-[type="radio"] {
+:where([type="checkbox"], [type="radio"]) {
 	box-sizing: border-box;
 	padding: 0;
 }
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+:where([type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button) {
 	height: auto;
 }
 
-[type="search"] {
+:where([type="search"]) {
 	-webkit-appearance: textfield;
 	outline-offset: -2px;
 }
 
-:focus {
+:where(:focus) {
 	outline: 0;
 }
 
-::-moz-focus-inner {
+:where(::-moz-focus-inner) {
 	padding: 0;
 	border: 0;
 }
 
-::-webkit-file-upload-button {
+:where(::-webkit-file-upload-button) {
 	-webkit-appearance: button;
 	font: inherit;
 }
@@ -210,11 +192,11 @@ textarea {
 // Tables
 // ---------------------------------------------------------------------------------------------------------
 
-table {
+:where(table) {
 	border-collapse: collapse;
 }
 
-th {
+:where(th) {
 	text-align: left;
 	font-weight: inherit;
 }
@@ -225,12 +207,11 @@ th {
 // Interactive
 // ---------------------------------------------------------------------------------------------------------
 
-details,
-menu {
+:where(details, menu) {
 	display: block;
 }
 
-summary {
+:where(summary) {
 	display: list-item;
 }
 
@@ -240,7 +221,7 @@ summary {
 // Scripting
 // ---------------------------------------------------------------------------------------------------------
 
-template {
+:where(template) {
 	display: none;
 }
 
@@ -250,7 +231,7 @@ template {
 // Hidden
 // ---------------------------------------------------------------------------------------------------------
 
-[hidden] {
+:where([hidden]) {
 	display: none;
 }
 
@@ -259,7 +240,7 @@ template {
 // SVG
 // ---------------------------------------------------------------------------------------------------------
 
-svg {
+:where(svg) {
 	// By default IE11 renders SVGs with overflow enabled, which can caused weird rendering issues
 	overflow: hidden;
 	display: inline-block;
@@ -272,7 +253,6 @@ svg {
 
 // Disable list styling on lists by default, as the styling should be set
 // explicitly in the `.content` class (already done in the `content()` mixin.
-ul,
-ol {
+:where(ul, ol) {
 	list-style: none;
 }
