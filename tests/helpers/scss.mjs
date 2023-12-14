@@ -1,5 +1,6 @@
-import sass from "sass";
+import * as sass from "sass";
 import path from "path";
+import {fileURLToPath} from "node:url";
 
 /**
  * Compiles the scss
@@ -11,7 +12,7 @@ export function compileScss (scss)
 {
 	return sass.renderSync({
 		data: scss,
-		includePaths: [path.join(__dirname, "../..")],
+		includePaths: [path.join(fileURLToPath(import.meta.url), "/../..")],
 		outputStyle: "compressed",
 	}).css.toString();
 }

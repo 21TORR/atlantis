@@ -12,12 +12,10 @@
 		"test": "ava -v"
 	},
 	"devDependencies": {
-		"@types/node": "^14.17.9",
-		"@types/sass": "^1.16.1",
-		"ava": "^3.15.0",
-		"esm": "^3.2.25",
+		"@types/node": "^18.19.3",
+		"ava": "^6.0.1",
 		"prettier-package-json": "^2.6.0",
-		"sass": "^1.38.0"
+		"sass": "^1.69.5"
 	},
 	"publishConfig": {
 		"access": "public",
@@ -25,10 +23,7 @@
 	},
 	"ava": {
 		"files": [
-			"tests/**/*.test.js"
-		],
-		"require": [
-			"esm"
+			"tests/**/*.test.mjs"
 		]
 	},
 	"np": {

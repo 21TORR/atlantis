@@ -1,5 +1,5 @@
 import test from "ava";
-import {compileScss} from "../../helpers/scss";
+import {compileScss} from "../../helpers/scss.mjs";
 
 // tests the different variations
 // warning: the compressed style has no space in screen and (...)and (...)and (...)
