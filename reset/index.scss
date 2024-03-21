@@ -8,7 +8,7 @@
 // Document
 // ---------------------------------------------------------------------------------------------------------
 
-:where(html) {
+html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	box-sizing: border-box;
@@ -17,17 +17,19 @@
 	font-size: math.percentage(math.div(10, 16));
 }
 
-:where(*) {
+* {
 	padding: 0;
 	margin: 0;
 }
 
-:where(*, ::before, ::after) {
+*,
+::before,
+::after {
 	box-sizing: inherit;
 }
 
 
-:where(body) {
+body {
 	font: 1.6rem / 1.2 sans-serif;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -40,11 +42,16 @@
 // Grouping content
 // ---------------------------------------------------------------------------------------------------------
 
-:where(main) {
+main {
 	display: block;
 }
 
-:where(h1, h2, h3, h4, h5, h6) {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-size: inherit;
 	font-weight: inherit;
 	font-style: inherit;
@@ -56,37 +63,40 @@
 // Text level semantics
 // ---------------------------------------------------------------------------------------------------------
 
-:where(b, strong) {
+b,
+strong {
 	font-weight: 700;
 }
 
-:where(a) {
+a {
 	color: inherit;
 	text-decoration: none;
 	background-color: transparent;
 }
 
-:where(code, kbd) {
+code,
+kbd {
 	font-family: monospace, monospace;
 	font-size: 1em;
 }
 
-:where(small) {
+small {
 	font-size: 80%;
 }
 
-:where(sub, sup) {
+sub,
+sup {
 	font-size: 75%;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
 }
 
-:where(sub) {
+sub {
 	bottom: -0.25em;
 }
 
-:where(sup) {
+sup {
 	top: -0.5em;
 }
 
@@ -96,22 +106,23 @@
 // Embedded content
 // ---------------------------------------------------------------------------------------------------------
 
-:where(audio, video) {
+audio,
+video {
 	display: block;
 }
 
-:where(audio:not([controls])) {
+audio:not([controls]) {
 	display: none;
 	height: 0;
 }
 
-:where(img) {
+img {
 	border-style: none;
 	max-width: 100%;
 	height: auto;
 }
 
-:where(iframe) {
+iframe {
 	border: 0;
 }
 
@@ -121,7 +132,7 @@
 // ---------------------------------------------------------------------------------------------------------
 
 // Don't forget to style the focus state as well!
-:where(button) {
+button {
 	color: inherit;
 	border: 0;
 	border-radius: 0;
@@ -133,55 +144,62 @@
 	outline: 0;
 }
 
-:where(button, input) {
+button,
+input {
 	overflow: visible;
 }
 
-:where(button, input, textarea) {
+button,
+input,
+textarea {
 	font: inherit;
 	text-align: inherit;
 }
 
-:where(input:disabled, textarea:disabled) {
+input:disabled,
+textarea:disabled {
 	color: inherit;
 }
 
-:where(button, select) {
+button,
+select {
 	text-transform: none;
 }
 
-:where(progress) {
+progress {
 	vertical-align: baseline;
 }
 
-:where(textarea) {
+textarea {
 	overflow: auto;
 }
 
-:where([type="checkbox"], [type="radio"]) {
+[type="checkbox"],
+[type="radio"] {
 	box-sizing: border-box;
 	padding: 0;
 }
 
-:where([type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button) {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
 	height: auto;
 }
 
-:where([type="search"]) {
+[type="search"] {
 	-webkit-appearance: textfield;
 	outline-offset: -2px;
 }
 
-:where(:focus) {
+:focus {
 	outline: 0;
 }
 
-:where(::-moz-focus-inner) {
+::-moz-focus-inner {
 	padding: 0;
 	border: 0;
 }
 
-:where(::-webkit-file-upload-button) {
+::-webkit-file-upload-button {
 	-webkit-appearance: button;
 	font: inherit;
 }
@@ -192,11 +210,11 @@
 // Tables
 // ---------------------------------------------------------------------------------------------------------
 
-:where(table) {
+table {
 	border-collapse: collapse;
 }
 
-:where(th) {
+th {
 	text-align: left;
 	font-weight: inherit;
 }
@@ -207,11 +225,12 @@
 // Interactive
 // ---------------------------------------------------------------------------------------------------------
 
-:where(details, menu) {
+details,
+menu {
 	display: block;
 }
 
-:where(summary) {
+summary {
 	display: list-item;
 }
 
@@ -221,7 +240,7 @@
 // Scripting
 // ---------------------------------------------------------------------------------------------------------
 
-:where(template) {
+template {
 	display: none;
 }
 
@@ -231,7 +250,7 @@
 // Hidden
 // ---------------------------------------------------------------------------------------------------------
 
-:where([hidden]) {
+[hidden] {
 	display: none;
 }
 
@@ -240,7 +259,7 @@
 // SVG
 // ---------------------------------------------------------------------------------------------------------
 
-:where(svg) {
+svg {
 	// By default IE11 renders SVGs with overflow enabled, which can caused weird rendering issues
 	overflow: hidden;
 	display: inline-block;
@@ -253,6 +272,7 @@
 
 // Disable list styling on lists by default, as the styling should be set
 // explicitly in the `.content` class (already done in the `content()` mixin.
-:where(ul, ol) {
+ul,
+ol {
 	list-style: none;
 }

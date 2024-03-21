@@ -1,3 +1,9 @@
+2.1.0
+=====
+
+* (bug) Revert CSS Reset back to no longer use `:where()`.  
+
+
 2.0.0
 =====
 
