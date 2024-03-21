@@ -2,6 +2,7 @@
 =====
 
 * (bug) Revert CSS Reset back to no longer use `:where()`.  
+* (internal) Add automatic package publishing.  
 
 
 2.0.0

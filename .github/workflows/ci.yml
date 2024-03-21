@@ -1,6 +1,6 @@
 name: CI
 
-on: [ push ]
+on: [ push, workflow_call ]
 
 jobs:
     build-test:
@@ -19,7 +19,8 @@ jobs:
                     version: 'latest'
                     run_install: true
 
-            -   run: pnpm test
+            -   name: Run Tests
+                run: pnpm test
 
             -   name: Prettify package.json
                 run: ./node_modules/.bin/prettier-package-json --use-tabs --list-different
