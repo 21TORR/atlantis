@@ -19,15 +19,11 @@
 	},
 	"publishConfig": {
 		"access": "public",
-		"publish-branch": "1.x"
+		"publish-branch": "2.x"
 	},
 	"ava": {
 		"files": [
 			"tests/**/*.test.mjs"
 		]
-	},
-	"np": {
-		"branch": "1.x",
-		"contents": "dist"
 	}
 }

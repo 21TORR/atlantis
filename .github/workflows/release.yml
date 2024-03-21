@@ -1,0 +1,35 @@
+name: Release version to npm
+
+on:
+    workflow_dispatch:
+    push:
+        tags:
+            - '*'
+
+jobs:
+    ci:
+        uses: "./.github/workflows/ci.yml"
+    deploy:
+        name: deploy
+        needs: [ci]
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout Code
+                uses: actions/checkout@v4
+
+            -   uses: actions/setup-node@v4
+                with:
+                    node-version: '18'
+
+            -   uses: pnpm/action-setup@v3
+                with:
+                    version: 'latest'
+                    run_install: true
+
+            -   name: Set version number in package.json
+                run: pnpm version from-git --no-git-tag-version
+
+            -   name: Publish package
+                uses: JS-DevTools/npm-publish@v3
+                with:
+                    token: ${{ secrets.NPM_TOKEN }}
