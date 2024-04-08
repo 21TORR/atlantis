@@ -3,4 +3,4 @@ Atlantis
 
 SCSS library, providing different mixins and helpers.
 
-> 📚 [**Read the docs**](https://21torr-docs.fly.dev/docs/ts-scss/atlantis/)
+> 📚 [**Read the docs**](https://21torr-docs.pages.dev/docs/ts-scss/atlantis/)
