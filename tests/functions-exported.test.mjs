@@ -3,6 +3,8 @@ import {compileScss} from "./helpers/scss.mjs";
 
 test("All functions are properly exported", t => {
 	const expectedFunctions = [
+		// Fluid
+		"fluid-prop(30rem, 140rem, 2rem, 4rem)",
 		// SVG
 		"inline-svg('<svg..>')",
 		// Types
