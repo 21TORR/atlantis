@@ -8,13 +8,10 @@
 @function fluid-prop($min-vw, $max-vw, $min-value, $max-value) {
 	/* prettier-ignore */
 	@if meta.type-of($min-vw) == "number"
-		and not math.is-unitless($min-vw)
 		and meta.type-of($max-vw) == "number"
-		and not math.is-unitless($max-vw)
 		and meta.type-of($min-value) == "number"
-		and not math.is-unitless($min-value)
 		and meta.type-of($max-value) == "number"
-		and not math.is-unitless($max-value)
+		and not math.is-unitless($min-vw)
 		and math.unit($min-vw) == math.unit($max-vw)
 		and math.unit($min-vw) == math.unit($min-value)
 		and math.unit($min-vw) == math.unit($max-value)
