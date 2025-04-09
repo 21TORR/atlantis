@@ -1,3 +1,9 @@
+2.2.0
+=====
+
+* (feature) Add function `fluid-prop()`. 
+
+
 2.1.0
 =====
 
