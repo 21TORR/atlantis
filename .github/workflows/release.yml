@@ -15,11 +15,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout Code
-                uses: actions/checkout@v4
+                uses: actions/checkout@v6
 
-            -   uses: actions/setup-node@v4
+            -   uses: actions/setup-node@v6
                 with:
                     node-version: '24'
+                    registry-url: "https://registry.npmjs.org"
 
             -   uses: pnpm/action-setup@v3
                 with:
@@ -30,6 +31,4 @@ jobs:
                 run: pnpm version from-git --no-git-tag-version
 
             -   name: Publish package
-                uses: JS-DevTools/npm-publish@v3
-                with:
-                    token: ${{ secrets.NPM_TOKEN }}
+                run: pnpm publish --ignore-scripts
