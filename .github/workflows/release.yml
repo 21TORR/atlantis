@@ -26,6 +26,10 @@ jobs:
                     node-version: '24'
                     registry-url: "https://registry.npmjs.org"
 
+            -
+                name: Clear auth token for OIDC
+                run: echo "NODE_AUTH_TOKEN=" >> $GITHUB_ENV
+
             -   uses: pnpm/action-setup@v3
                 with:
                     version: 'latest'
@@ -36,5 +40,3 @@ jobs:
 
             -   name: Publish package
                 run: npm publish --ignore-scripts
-                env:
-                    NODE_AUTH_TOKEN: "" # explicitly clear to use OIDC
