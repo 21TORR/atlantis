@@ -6,6 +6,10 @@ on:
         tags:
             - '*'
 
+permissions:
+    id-token: write  # Required for OIDC in npm
+    contents: read
+
 jobs:
     ci:
         uses: "./.github/workflows/ci.yml"
@@ -31,4 +35,4 @@ jobs:
                 run: pnpm version from-git --no-git-tag-version
 
             -   name: Publish package
-                run: npm publish --ignore-scripts
+                run: pnpm publish --ignore-scripts --no-git-checks
