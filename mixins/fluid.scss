@@ -20,9 +20,9 @@
 		$calc-value: string.unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
 
 		@return clamp(
-			#{if($min-value > $max-value, $max-value, $min-value)},
+			#{if(sass($min-value > $max-value): $max-value; else: $min-value)},
 			#{$calc-value},
-			#{if($min-value > $max-value, $min-value, $max-value)}
+			#{if(sass($min-value > $max-value): $min-value; else: $max-value)}
 		);
 	}
 

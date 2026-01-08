@@ -12,10 +12,10 @@
 		"test": "ava -v"
 	},
 	"devDependencies": {
-		"@types/node": "^18.19.26",
-		"ava": "^6.1.2",
+		"@types/node": "^24.10.4",
+		"ava": "^6.4.1",
 		"prettier-package-json": "^2.8.0",
-		"sass": "^1.72.0"
+		"sass": "^1.97.2"
 	},
 	"publishConfig": {
 		"access": "public",

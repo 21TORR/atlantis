@@ -161,10 +161,10 @@ $font-type-file-extension-map: (
 ) {
 	@font-face {
 		font-family: $font-family;
-		font-weight: if($font-weight, $font-weight, extract-font-weight($path));
-		font-style: if($font-style, $font-style, extract-font-style($path));
+		font-weight: if(sass($font-weight): $font-weight; else: extract-font-weight($path));
+		font-style: if(sass($font-style): $font-style; else: extract-font-style($path));
 		font-display: $font-display;
-		src: $path format(string.quote(if($format, $format, extract-font-format($path))));
+		src: $path format(string.quote(if(sass($format): $format; else: extract-font-format($path))));
 	}
 }
 

@@ -1,3 +1,11 @@
+2.2.1
+=====
+
+* (improvement) Fix deprecations of if-functions, introduced in sass 1.95.0.
+* (internal) Bump dependencies.
+* (internal) Bump Node to 24.
+
+
 2.2.0
 =====
 
