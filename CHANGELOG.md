@@ -1,3 +1,9 @@
+2.2.7
+=====
+
+* (internal) Update release workflow.
+
+
 2.2.6
 =====
 

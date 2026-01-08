@@ -36,3 +36,5 @@ jobs:
 
             -   name: Publish package
                 run: npm publish --ignore-scripts
+                env:
+                    NODE_AUTH_TOKEN: "" # explicitly clear to use OIDC
