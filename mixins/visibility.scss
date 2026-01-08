@@ -29,7 +29,7 @@
 ///
 @mixin hide-text ($absolute: false) {
 	overflow: hidden;
-	text-indent: if($absolute, 101vw, 101%);
+	text-indent: if(sass($absolute): 101vw; else: 101%);
 	white-space: nowrap;
 }
 
