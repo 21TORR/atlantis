@@ -31,4 +31,4 @@ jobs:
                 run: pnpm version from-git --no-git-tag-version
 
             -   name: Publish package
-                run: pnpm publish --ignore-scripts
+                run: pnpm publish --ignore-scripts --no-git-checks
